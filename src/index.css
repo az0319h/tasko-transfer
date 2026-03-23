@@ -1,0 +1,532 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 500px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1400px;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.35 0.02 165.48);
+  --card: oklch(1.00 0 0);
+  --card-foreground: oklch(0.35 0.02 165.48);
+  --popover: oklch(1.00 0 0);
+  --popover-foreground: oklch(0.35 0.02 165.48);
+  --primary: oklch(0.67 0.17 153.85);
+  --primary-foreground: oklch(0.99 0.02 169.99);
+  --secondary: oklch(0.90 0.02 238.66);
+  --secondary-foreground: oklch(0.20 0.02 266.02);
+  --muted: oklch(0.90 0.02 240.73);
+  --muted-foreground: oklch(0.50 0.03 268.53);
+  --accent: oklch(0.90 0.02 240.73);
+  --accent-foreground: oklch(0.35 0.02 165.48);
+  --destructive: oklch(0.61 0.24 20.96);
+  --border: oklch(0.94 0.01 238.46);
+  --input: oklch(0.85 0.02 240.75);
+  --ring: oklch(0.67 0.17 153.85);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.98 0.01 238.45);
+  --sidebar-foreground: oklch(0.35 0.02 165.48);
+  --sidebar-primary: oklch(0.67 0.17 153.85);
+  --sidebar-primary-foreground: oklch(0.98 0.01 238.45);
+  --sidebar-accent: oklch(0.90 0.02 240.73);
+  --sidebar-accent-foreground: oklch(0.35 0.02 165.48);
+  --sidebar-border: oklch(0.85 0.02 240.75);
+  --sidebar-ring: oklch(0.67 0.17 153.85);
+}
+
+.dark {
+  --background: oklch(0.15 0.02 269.18);
+  --foreground: oklch(0.95 0.01 238.46);
+  --card: oklch(0.20 0.02 266.02);
+  --card-foreground: oklch(0.95 0.01 238.46);
+  --popover: oklch(0.20 0.02 266.02);
+  --popover-foreground: oklch(0.95 0.01 238.46);
+  --primary: oklch(0.67 0.17 153.85);
+  --primary-foreground: oklch(0.15 0.02 269.18);
+  --secondary: oklch(0.30 0.03 271.05);
+  --secondary-foreground: oklch(0.95 0.01 238.46);
+  --muted: oklch(0.30 0.03 271.05);
+  --muted-foreground: oklch(0.60 0.03 269.46);
+  --accent: oklch(0.30 0.03 271.05);
+  --accent-foreground: oklch(0.95 0.01 238.46);
+  --destructive: oklch(0.64 0.25 19.69);
+  --border: oklch(0.95 0.01 238.46 / 15%);
+  --input: oklch(0.95 0.01 238.46 / 20%);
+  --ring: oklch(0.67 0.17 153.85);
+  --chart-1: oklch(0.66 0.13 227.15);
+  --chart-2: oklch(0.60 0.10 269.83);
+  --chart-3: oklch(0.70 0.15 159.83);
+  --chart-4: oklch(0.80 0.10 100.65);
+  --chart-5: oklch(0.60 0.15 300.14);
+  --sidebar: oklch(0.20 0.02 266.02);
+  --sidebar-foreground: oklch(0.95 0.01 238.46);
+  --sidebar-primary: oklch(0.67 0.17 153.85);
+  --sidebar-primary-foreground: oklch(0.15 0.02 269.18);
+  --sidebar-accent: oklch(0.30 0.03 271.05);
+  --sidebar-accent-foreground: oklch(0.95 0.01 238.46);
+  --sidebar-border: oklch(0.95 0.01 238.46 / 15%);
+  --sidebar-ring: oklch(0.67 0.17 153.85);
+}
+
+/* 10px (보조 텍스트용) */
+@utility text-10-bold {
+  font-size: 0.625rem; /* 10px */
+  line-height: 1rem; /* 16px */
+  font-weight: 700;
+}
+@utility text-10-semibold {
+  font-size: 0.625rem;
+  line-height: 1rem; /* 16px */
+  font-weight: 600;
+}
+@utility text-10-medium {
+  font-size: 0.625rem;
+  line-height: 1rem; /* 16px */
+  font-weight: 500;
+}
+@utility text-10-regular {
+  font-size: 0.625rem;
+  line-height: 1rem; /* 16px */
+  font-weight: 400;
+}
+@utility text-10-light {
+  font-size: 0.625rem;
+  line-height: 1rem; /* 16px */
+  font-weight: 300;
+}
+
+/* 12px (캡션/라벨) */
+@utility text-12-bold {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.25rem; /* 20px */
+  font-weight: 700;
+}
+@utility text-12-semibold {
+  font-size: 0.75rem;
+  line-height: 1.25rem; /* 20px */
+  font-weight: 600;
+}
+@utility text-12-medium {
+  font-size: 0.75rem;
+  line-height: 1.25rem; /* 20px */
+  font-weight: 500;
+}
+@utility text-12-regular {
+  font-size: 0.75rem;
+  line-height: 1.25rem; /* 20px */
+  font-weight: 400;
+}
+@utility text-12-light {
+  font-size: 0.75rem;
+  line-height: 1.25rem; /* 20px */
+  font-weight: 300;
+}
+
+/* 14px (본문 소형) */
+@utility text-14-bold {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.375rem; /* 22px */
+  font-weight: 700;
+}
+@utility text-14-semibold {
+  font-size: 0.875rem;
+  line-height: 1.375rem; /* 22px */
+  font-weight: 600;
+}
+@utility text-14-medium {
+  font-size: 0.875rem;
+  line-height: 1.375rem; /* 22px */
+  font-weight: 500;
+}
+@utility text-14-regular {
+  font-size: 0.875rem;
+  line-height: 1.375rem; /* 22px */
+  font-weight: 400;
+}
+@utility text-14-light {
+  font-size: 0.875rem;
+  line-height: 1.375rem; /* 22px */
+  font-weight: 300;
+}
+
+/* 16px (기본 본문) */
+@utility text-16-bold {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: 700;
+}
+@utility text-16-semibold {
+  font-size: 1rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 600;
+}
+@utility text-16-medium {
+  font-size: 1rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 500;
+}
+@utility text-16-regular {
+  font-size: 1rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 400;
+}
+@utility text-16-light {
+  font-size: 1rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 300;
+}
+
+/* 18px (조금 큰 본문/섹션 타이틀) */
+@utility text-18-bold {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+@utility text-18-semibold {
+  font-size: 1.125rem;
+  line-height: 1.75rem; /* 28px */
+  font-weight: 600;
+}
+@utility text-18-medium {
+  font-size: 1.125rem;
+  line-height: 1.75rem; /* 28px */
+  font-weight: 500;
+}
+@utility text-18-regular {
+  font-size: 1.125rem;
+  line-height: 1.75rem; /* 28px */
+  font-weight: 400;
+}
+@utility text-18-light {
+  font-size: 1.125rem;
+  line-height: 1.75rem; /* 28px */
+  font-weight: 300;
+}
+
+/* 20px (중간 타이틀) */
+@utility text-20-bold {
+  font-size: 1.25rem; /* 20px */
+  line-height: 2rem; /* 32px */
+  font-weight: 700;
+}
+@utility text-20-semibold {
+  font-size: 1.25rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 600;
+}
+@utility text-20-medium {
+  font-size: 1.25rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 500;
+}
+@utility text-20-regular {
+  font-size: 1.25rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 400;
+}
+
+/* 22px (섹션 타이틀/강조 텍스트) */
+@utility text-22-bold {
+  font-size: 1.375rem; /* 22px */
+  line-height: 2rem; /* 32px */
+  font-weight: 700;
+}
+@utility text-22-semibold {
+  font-size: 1.375rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 600;
+}
+@utility text-22-medium {
+  font-size: 1.375rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 500;
+}
+@utility text-22-regular {
+  font-size: 1.375rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 400;
+}
+
+/* 24px (큰 타이틀) */
+@utility text-24-bold {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2.25rem; /* 36px */
+  font-weight: 700;
+}
+@utility text-24-semibold {
+  font-size: 1.5rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 600;
+}
+@utility text-24-medium {
+  font-size: 1.5rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 500;
+}
+@utility text-24-regular {
+  font-size: 1.5rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 400;
+}
+@utility text-24-light {
+  font-size: 1.5rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 300;
+}
+
+/* 26px (히어로 보조 타이틀) */
+@utility text-26-bold {
+  font-size: 1.625rem; /* 26px */
+  line-height: 2.25rem; /* 36px */
+  font-weight: 700;
+}
+@utility text-26-semibold {
+  font-size: 1.625rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 600;
+}
+@utility text-26-medium {
+  font-size: 1.625rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 500;
+}
+@utility text-26-regular {
+  font-size: 1.625rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 400;
+}
+
+/* 28px (히어로 타이틀) */
+@utility text-28-bold {
+  font-size: 1.75rem; /* 28px */
+  line-height: 2.5rem; /* 40px */
+  font-weight: 700;
+}
+@utility text-28-semibold {
+  font-size: 1.75rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 600;
+}
+@utility text-28-medium {
+  font-size: 1.75rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 500;
+}
+@utility text-28-regular {
+  font-size: 1.75rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 400;
+}
+
+/* 30px (히어로 메인 타이틀 소형) */
+@utility text-30-bold {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.5rem; /* 40px */
+  font-weight: 700;
+}
+@utility text-30-semibold {
+  font-size: 1.875rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 600;
+}
+@utility text-30-medium {
+  font-size: 1.875rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 500;
+}
+@utility text-30-regular {
+  font-size: 1.875rem;
+  line-height: 2.5rem; /* 40px */
+  font-weight: 400;
+}
+
+/* 32px (히어로 메인 타이틀) */
+@utility text-32-bold {
+  font-size: 2rem; /* 32px */
+  line-height: 2.75rem; /* 44px */
+  font-weight: 700;
+}
+@utility text-32-semibold {
+  font-size: 2rem;
+  line-height: 2.75rem; /* 44px */
+  font-weight: 600;
+}
+@utility text-32-medium {
+  font-size: 2rem;
+  line-height: 2.75rem; /* 44px */
+  font-weight: 500;
+}
+@utility text-32-regular {
+  font-size: 2rem;
+  line-height: 2.75rem; /* 44px */
+  font-weight: 400;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html,
+body {
+  word-break: keep-all;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Input 및 Textarea placeholder 텍스트 크기 통일 */
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.875rem; /* 14px - text-14-regular */
+  line-height: 1.375rem; /* 22px */
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 1rem; /* 16px - text-16-regular */
+    line-height: 1.5rem; /* 24px */
+  }
+}
+
+/* 스크롤바 필요시에만 표시 - macOS 호환 강화 */
+.overflow-x-scroll {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-gutter: stable;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.15);
+  /* 스크롤바 공간 예약 (레이아웃 시프트 방지) */
+  padding-bottom: 12px;
+  margin-bottom: -12px;
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+  height: 12px !important;
+  /* display: block 제거 - 필요할 때만 표시 */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.overflow-x-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.overflow-x-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  min-width: 20px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.overflow-x-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.overflow-x-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* 다크 모드 대응 */
+.dark .overflow-x-scroll {
+  scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.15);
+}
+
+.dark .overflow-x-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15) !important;
+  -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.dark .overflow-x-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.dark .overflow-x-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.dark .overflow-x-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* FullCalendar 요일 헤더(day headers) 다크모드 텍스트 색상 */
+.dark .fc-col-header-cell {
+  color: black !important;
+}
+
+.dark .fc-col-header-cell * {
+  color: black !important;
+}
+
+.dark .fc-day-header {
+  color: black !important;
+}
+
+.dark .fc-day-header * {
+  color: black !important;
+}
