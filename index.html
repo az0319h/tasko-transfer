@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasko - 업무 관리 협업 플랫폼</title>
+    <meta name="description" content="Tasko는 회사 내부에서 업무 할당, 진행, 승인 및 진행되는 업무를 한 곳에서 관리하기 위한 협업 플랫폼입니다." />
+    <meta name="keywords" content="Tasko, 업무 관리, 협업 플랫폼, 프로젝트 관리, 업무 할당, 승인 시스템, 팀 커뮤니케이션, 워크플로우" />
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tasko - 업무 관리 협업 플랫폼" />
+    <meta property="og:description" content="Tasko는 회사 내부에서 업무 할당, 진행, 승인 및 진행되는 업무를 한 곳에서 관리하기 위한 협업 플랫폼입니다." />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="Tasko" />
+    <meta property="og:image" content="https://tasko.io.kr/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tasko - 업무 관리 협업 플랫폼" />
+    
+    <!-- 트위터 카드 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tasko - 업무 관리 협업 플랫폼" />
+    <meta name="twitter:description" content="Tasko는 회사 내부에서 업무 할당, 진행, 승인 및 진행되는 업무를 한 곳에서 관리하기 위한 협업 플랫폼입니다." />
+    <meta name="twitter:image" content="https://tasko.io.kr/images/og-image.png" />
+    <meta name="twitter:image:alt" content="Tasko - 업무 관리 협업 플랫폼" />
+
+    <!-- 카카오톡 JavaScript SDK -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme") || "system";
+        const html = document.documentElement;
+
+        html.classList.remove("light", "dark");
+        if (theme === "system") {
+          const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          html.classList.add(isDark ? "dark" : "light");
+        } else {
+          html.classList.add(theme);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

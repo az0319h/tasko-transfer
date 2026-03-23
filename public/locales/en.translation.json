@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "default": {
+      "title": "Tasko - Manage Your Work, Clearly",
+      "description": "Tasko is a task and workflow management web app that helps individuals and teams organize work, track progress, and manage approvals in one place.",
+      "keywords": "Tasko, task management, workflow, project management, team collaboration, dashboard, approvals, productivity"
+    },
+    "login": {
+      "title": "Login - TASKO",
+      "description": "Log in to TASKO and stay on top of your tasks, progress, and approvals."
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "logout": "Log out",
+    "comingSoon": "This page is under construction.",
+    "comingSoonDescription": "Coming soon."
+  },
+  "layout": {
+    "sidebar": {
+      "menu": {
+        "home": "Home",
+        "schedule": "Schedule",
+        "notifications": "Notifications",
+        "community": "Community",
+        "agents": "AI Agents",
+        "settings": "Settings",
+        "users": "User Management",
+        "profile": "Profile",
+        "post": "Post"
+      },
+      "settingsSub": {
+        "language": "Change Language",
+        "theme": "Change Theme",
+        "editProfile": "Edit Profile",
+        "changeEmail": "Change Email",
+        "changePassword": "Change Password"
+      },
+      "footer": {
+        "logout": "Log out"
+      }
+    }
+  },
+  "dialog": {
+    "language": {
+      "title": "Change Language",
+      "description": "Which language would you like to use Tasko in?"
+    },
+    "theme": {
+      "title": "Change Theme",
+      "description": "Which theme would you like to use Tasko with?"
+    },
+    "logout": {
+      "title": "Log out of Tasko?",
+      "description": "Even if you log out, your account information and settings will be safely saved. You can log in anytime to continue using CAMBOB."
+    }
+  },
+  "select": {
+    "label": {
+      "language": "Language",
+      "theme": "Theme"
+    }
+  },
+
+  "notFound": {
+    "title": "Page not found",
+    "description": "We are sorry! The page you are looking for doesn't exist.",
+    "backToHome": "Back to Home"
+  }
+}
