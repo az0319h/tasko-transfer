@@ -121,3 +121,4 @@ npm run lint    # ESLint 실행
 
 - [네이밍 규칙](docs/NAMING.md) - 파일/컴포넌트 네이밍 가이드
 - [Supabase Edge Functions](supabase/functions/README.md) - 백엔드 함수 설명
+
